@@ -1,0 +1,30 @@
+#dynamic 0x6B4704
+
+#org @start
+lockall
+checkflag 0x1000
+if 0x1 goto @done
+applymovement 0xFF @faceup
+waitmovement 0x0
+msgbox @msg MSG_KEEPOPEN
+closeonkeypress
+applymovement 0xFF @move
+waitmovement 0x0
+releaseall
+end
+
+#org @done
+releaseall
+end
+
+
+#org @msg
+= There are wild Pokemon out there!
+
+#org @move
+#raw 0x0A
+#raw 0xFE
+
+#org @faceup
+#raw 0x01
+#raw 0xFE

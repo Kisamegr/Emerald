@@ -1,0 +1,14 @@
+#dynamic 0x6BA81C
+
+#org @start
+checkflag 0x1007
+if 0x0 goto @done
+msgbox @msg MSG_SIGN
+
+end
+
+#org @done
+end
+
+#org @msg
+= [green_em]I should go back to the house.\pMy uncle would be there by now...

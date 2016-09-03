@@ -1,0 +1,44 @@
+#dynamic 0x6B46C4
+
+#org @start
+lockall
+movesprite 0xFF 0x5 0x6B
+spriteface 0xFF 0x3
+spriteface 0xD 0x4
+
+msgbox @norm MSG_KEEPOPEN '"DAD: So, did it work out?"
+closeonkeypress
+msgbox @wally MSG_KEEPOPEN '"WALLY: Thank you, yes, it did.\nHe..."
+closeonkeypress
+
+spriteface 0xD 0x1
+
+applymovement 0xFF @moveout
+waitmovement 0x0
+
+setvar 0x4085 0x2
+setflag 0x2D6
+setflag 0x1007
+setflag 0x1000
+setflag 0x1001
+
+givepokemon 0x118 5 0x0 0x0 0x0 0x0
+
+warp 0x0 0x0 0x2 0x0 0x0
+waitstate
+
+releaseall
+end
+
+#org @norm
+= NORMAN: So, did it work out?
+
+#org @wally 
+= [green_em]WALLY: Thank you, yes, it did.\nHere's your POKeMON back.\p[player], thank you for coming along\nwith me.\pYou two are why I was able to catch\nmy POKeMON.\pI promise I'll take really good\ncare of it.\pOh! My mom's waiting for me,\nso I have to go!\pBye, [player]!
+
+#org @moveout
+#raw 0x8
+#raw 0x8
+#raw 0x8
+#raw 0x8
+#raw 0xFE

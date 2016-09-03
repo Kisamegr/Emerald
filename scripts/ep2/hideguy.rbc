@@ -1,0 +1,14 @@
+#dynamic 0x6D1224
+
+#org @start
+checkflag 0x1010
+if 0x0 call @changemusic
+setflag 0x100F
+hidesprite 0x4
+end
+
+#org @changemusic
+playsong 0x19A 0x1
+return
+
+

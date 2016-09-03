@@ -1,0 +1,135 @@
+#dynamic 0x9C2224
+
+#org @start
+lock
+checkflag 0x1002
+if 0x1 goto @done
+
+msgbox @norman1 MSG_NORMAL
+pause 0x15
+
+applymovement 0xD @faceright
+applymovement 0xC @faceright
+waitmovement 0x0
+pause 0x15
+
+msgbox @wally1 MSG_NORMAL
+msgbox @norman2 MSG_NORMAL
+msgbox @wally2 MSG_NORMAL
+msgbox @norman3 MSG_NORMAL
+
+applymovement 0xD @facedown
+applymovement 0xC @faceup
+waitmovement 0x0
+
+msgbox @norman33 MSG_NORMAL
+
+applymovement 0xD @faceright
+waitmovement 0x0
+
+msgbox @norman333 MSG_NORMAL
+
+msgbox @wally3 MSG_NORMAL
+msgbox @norman4 MSG_NORMAL
+msgbox @wally4 MSG_NORMAL
+
+applymovement 0xD @facedown
+applymovement 0xFF @facedown
+waitmovement 0x0
+pause 0x15
+
+msgbox @wally5 MSG_NORMAL
+pause 0x10
+
+applymovement 0xFF @movewally
+applymovement 0xC @movebrand
+waitmovement 0xFF
+
+applymovement 0xFF @faceup
+waitmovement 0x0
+
+applymovement 0xFF @facedown
+waitmovement 0x0
+waitmovement 0xC
+
+setvar 0x4057 0x2
+clearflag 0x2D6
+clearflag 0x362
+warp 0x0 0x0 0xFF 0xF 0x8
+waitstate
+release
+end
+
+#org @done
+msgbox @msgafter MSG_NORMAL
+release
+end
+
+#org @norman1
+= NORMAN: That's great news!\nI'll be looking forward to it!
+
+#org @wally1
+= [green_em]WALLY: Um... I...\nI'd like to get a POKeMON,please...
+
+#org @norman2
+= NORMAN: Hm? You're... Uh... Oh,\nright.\pYou're WALLY, right?
+
+#org @wally2
+= [green_em]WALLY: I'm going to go stay with\nmy relatives in VERDANTURF TOWN.\pI thought I would be lonely by\nmyself, so I wanted to take a\lPOKeMON along.\pBut I've never caught a POKeMON\nbefore. I don't know how...
+
+#org @norman3
+= NORMAN: Hm. I see.
+
+#org @norman33
+= NORMAN: Brendan, you heard that,\nright?\pGo with WALLY and make sure that\nhe safely catches a POKeMON.
+
+#org @norman333
+= WALLY, here, I'll loan you my\nPOkeMON.\pWALLY received a ZIGZAGOON!
+
+#org @wally3
+= [green_em]WALLY: Oh, wow!\nA POKeMON!
+
+#org @norman4
+= NORMAN: Hm. I'll give you a POKe\nBALL, too.\pGo for it!\pWALLY received a POKe BALL!
+
+#org @wally4
+= [green_em]WALLY: Oh, wow!\nThank you!
+
+#org @wally5
+= [green_em]Brendan, will you really come with\nme?
+
+
+#org @msgafter
+= You can become a strong trainer\nlike me if you train hard enough!
+
+#org @facedown
+#raw 0x0
+#raw 0xFE
+
+#org @faceup
+#raw 0x1
+#raw 0xFE
+
+#org @faceright
+#raw 0x03
+#raw 0xFE
+
+#org @movewally
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0xFE
+
+#org @movebrand
+#raw 0x14
+#raw 0x14
+#raw 0x14
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0xFE
+
+
+
+

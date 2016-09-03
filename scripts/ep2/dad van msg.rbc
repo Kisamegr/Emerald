@@ -1,0 +1,14 @@
+#dynamic 0x6D1224
+
+
+#org @start
+lock
+faceplayer
+msgbox @msg MSG_NORMAL
+release
+end
+
+#org @msg
+= This is terrible...
+
+

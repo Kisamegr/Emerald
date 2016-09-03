@@ -1,0 +1,354 @@
+#dynamic 0x9C4E88
+
+#org @start
+lock
+fadesong 0x18E
+pause 0x15
+msgbox @msgwanda1 MSG_NORMAL
+pause 0x20
+
+sound 0x15
+applymovement 0x8 @excla
+waitmovement 0x0
+faceplayer
+pause 0x20
+spriteface 0x6 0x4
+spriteface 0x7 0x3
+pause 0x20
+
+msgbox @msgwanda2 MSG_NORMAL
+pause 0x20
+
+fadesong 0x0
+msgbox @msgtrainer1 MSG_NORMAL
+pause 0x10
+
+showsprite 0x4
+sound 0x15
+applymovement 0x6 @que
+applymovement 0x7 @que
+applymovement 0x8 @que
+waitmovement 0x0
+pause 0x25
+
+
+spriteface 0x6 0x1
+spriteface 0x7 0x1
+spriteface 0xFF 0x1
+
+
+applymovement 0x4 @trainermove1
+waitmovement 0x0
+applymovement 0xFF @movepout
+waitmovement 0x0
+
+applymovement 0x4 @trainermove2
+waitmovement 0x0
+pause 0x10
+fadesong 0x1D0
+
+msgbox @msgtrainer2 MSG_NORMAL
+spriteface 0x4 0x1
+pause 0x15
+
+msgbox @msgtrainer3 MSG_NORMAL
+
+sound 0x15
+applymovement 0x8 @excla
+waitmovement 0x0
+pause 0x20
+spriteface 0x6 0x2
+spriteface 0x7 0x2
+spriteface 0xFF 0x2
+spriteface 0x4 0x2
+pause 0x20
+
+fadesong 0x18E
+msgbox @msgwanda3 MSG_NORMAL
+pause 0x20
+
+fadesong 0x1D0
+msgbox @msgtrainer4 MSG_NORMAL
+pause 0x20
+
+applymovement 0x4 @trainermove3
+applymovement 0x8 @movewandaout
+waitmovement 0x0
+
+applymovement 0xFF @moveplayerfront
+waitmovement 0x0
+pause 0x20
+
+msgbox @msgrocksmash MSG_KEEPOPEN
+closeonkeypress
+pause 0x40
+
+applymovement 0x5 0x829082B
+sound 0xC
+waitmovement 0x0
+
+
+setflag 0x1011
+setflag 0x100B
+setflag 0x100C
+setflag 0x100D
+setflag 0x1010
+pause 0x20
+
+msgbox @msgtrainer45 MSG_NORMAL
+pause 0x20
+
+applymovement 0x4 @trainermove4
+waitmovement 0x0
+pause 0x10
+
+setmaptile 0x08 0x02 0x23 0x0
+special 0x91
+sound 0x14                  'ground break - hole
+playsong 0x0 0x1
+pause 0x40
+
+spriteface 0x4 0x1
+pause 0x40
+
+
+msgbox @msgtrainer5 MSG_KEEPOPEN
+closeonkeypress
+pause 0x40
+
+sound 0x2B                'falling down
+applymovement 0x4 @hidetrainer
+waitmovement 0x0 
+pause 0x40
+sound 0x4D              'hit floor
+pause 0x40
+
+fadesong 0x1B6
+applymovement 0x8 @movewandafront
+waitmovement 0x0
+pause 0x10
+
+msgbox @msgwanda4 MSG_NORMAL
+pause 0x20
+
+msgbox @msguncle1 MSG_NORMAL
+pause 0x10
+
+applymovement 0x6 @moveuncle
+applymovement 0x8 @pushwanda
+applymovement 0xFF @moveplayerleft
+waitmovement 0x0
+
+spriteface 0x7 0x1
+pause 0x20
+
+msgbox @msguncle2 MSG_NORMAL
+pause 0x10
+msgbox @msgwally1 MSG_NORMAL
+
+applymovement 0x6 @excla
+applymovement 0x7 @excla
+applymovement 0x8 @excla
+waitmovement 0x0
+pause 0x15
+
+spriteface 0x8 0x03
+pause 0x15
+
+msgbox @msgwanda5 MSG_NORMAL
+pause 0x20
+
+msgbox @msgwally2 MSG_NORMAL
+pause 0x20
+
+spriteface 0xFF 0x04
+
+msgbox @msgwally3 MSG_NORMAL
+pause 0x15
+
+applymovement 0x6 @excla
+applymovement 0x7 @excla
+applymovement 0x8 @excla
+waitmovement 0x0
+pause 0x15
+
+spriteface 0x6 0x4
+spriteface 0x7 0x4
+spriteface 0x8 0x4
+pause 0x15
+
+applymovement 0xFF @wallyescape
+pause 0x30
+spriteface 0x6 0x2
+spriteface 0x7 0x2
+spriteface 0x8 0x2
+waitmovement 0x0
+sound 0x2B          'fall down hole
+pause 0x20
+
+msgbox @msgwanda6 MSG_KEEPOPEN
+closeonkeypress
+pause 0x10
+
+fadescreen 0x1
+pause 0x30
+sound 0x4D
+pause 0x30
+warpmuted 0x0 0x3B 0x0 0x04 0x19
+
+
+
+
+release
+end
+
+
+
+#org @msgwanda1
+=  [orange_em]I hope you are alright my love.
+
+#org @msgwanda2
+=  [orange_em]You see, WALLY, my boyfriend lives\nin Rustboro City.\pWe need to travel many many miles \nin order to see each other...\pWhen the construction of the\nRusturf Tunel started, we were so \pexcited that we would be able\nto meet every day!\pBut the construction suddenly\nstopped, due to a Whismur living\lthere...\pMy boyfriend, though, didn't want to\nabandon the tunnel, so he started\ldigging out of his own...\pThe Whismur got so irritated that\nits screams collapsed the\ltunnel and its entrance, while he\lwas inside.\pWe don't know if he is alright and\nwe can't get in to search for him...\pWe need something to clear the\nentrance.
+
+
+#org @msgtrainer1
+= [navy_em]I happened to overhear your\nconversation...\pAnd, as a matter of fact, can\nhelp you out of your desperate\lsituation.
+
+#org @msgtrainer2
+= [navy_em]First,\pLet me introduce myself.
+ 
+#org @msgtrainer3
+= [navy_em]I am Edward Hoenn.\pYes, Hoenn.\pMy Great Great Great Great...\p...Great Great Great Great...\p... *ahem* ...\p...Great Great Great Great...\pGrandfather, Nicolas Hoenn, was\nthe great explorer that found and\lnamed our land.\pHence, I come from a family of\nElites, and am on my way to claim\lwhat is mine.\pThe Elite position of the\nPokemon Master.\pI already got my first 5 badges\neasily, and...
+
+#org @msgwanda3
+= [orange_em]Yeah, yeah, we get it already...\pCan you help us open the entrance\nor not...\pEvery second counts...
+
+#org @msgtrainer4
+= [navy_em]Yes... Of course...\p(If we didn't have time, why did\nyou tell us your love story...)\pThis is a simple task for an Elite\nlike me.\pStep aside.
+
+
+#org @msgtrainer45
+= [navy_em]Too easy...
+
+#org @msgrocksmash
+= [navy_em]Go LAIRON, use ROCK SMASH!
+
+#org @msgtrainer5
+= [navy_em]Oh...\pBloody hell...
+
+#org @msgwanda4
+= [orange_em]This is bad...\pThis is really bad...
+
+#org @msguncle1
+= Uncle: That's it.
+
+#org @msguncle2
+= Uncle: This place is dangerous.\pUncle: The police will be here any\nminute now.\pAunt: Your dad is right, Wanda,\nlet the experts take over...
+
+
+#org @msgwally1
+= [green_em]...\pEhm...\pI'll go after them!
+
+#org @msguncle3
+= Uncle: No, Wally, I promised your\nparents I will take care of you.\pI can't let you go.
+
+#org @msgwanda5
+= [orange_em]We can't lose you too Wally...
+
+#org @msgwally2
+= [green_em](I have to go)\p(I'm a trainer now, it is my\nresponsibility)\p(It's now or never!)
+
+#org @msgwally3
+= [green_em]Hey look!\pA green Jigglypuff!
+
+#org @msgwanda6
+= [orange_em]WALLY !!!
+
+#org @excla
+#raw 0x56
+#raw 0xFE
+
+#org @que
+#raw 0x57
+#raw 0xFE
+
+#org @trainermove1
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0xFE
+
+#org @movepout
+#raw 0x08
+#raw 0x0B
+#raw 0x02
+#raw 0xFE
+
+#org @trainermove2
+#raw 0x05
+#raw 0x12
+#raw 0xFE
+
+#org @trainermove3
+#raw 0x09
+#raw 0x09
+#raw 0xFE
+
+#org @movewandaout
+#org 0x0B
+#org 0x02
+#org 0xFE
+
+#org @moveplayerfront
+#raw 0x0A
+#raw 0x01
+#raw 0xFE
+
+#org @trainermove4
+#raw 0x05
+#raw 0xFE
+
+#org @hidetrainer
+#raw 0x54
+#raw 0x09
+#raw 0x09
+#raw 0xFE
+
+#org @movewandafront
+#raw 0x0B
+#raw 0x01
+#raw 0xFE
+
+#org @moveuncle
+#raw 0x09
+#raw 0x0B
+#raw 0x04
+#raw 0xFE
+
+#org @pushwanda
+#raw 0x14
+#raw 0x08
+#raw 0x08
+#raw 0x01
+#raw 0xFE
+
+#org @moveplayerleft
+#raw 0x14
+#raw 0x12
+#raw 0x0A
+#raw 0x01
+#raw 0xFE
+
+#org @wallyescape
+#raw 0x16
+#raw 0x16
+#raw 0x18
+#raw 0x43
+#raw 0x54
+#raw 0xFE
+
+
+
+
+ 

@@ -1,0 +1,28 @@
+#dynamic 0x9A6740
+
+#org @start
+checkflag 0x1006
+if 0x1 goto @done
+pause 0x10
+
+applymovement 0x2 @facedown
+waitmovement 0x0
+pause 0x15
+
+msgbox @mom MSG_KEEPOPEN
+closeonkeypress
+
+setflag 0x1006
+release
+end
+
+#org @done
+release
+end
+
+#org @facedown
+#raw 0x0
+#raw 0xFE
+
+#org @mom
+= [red_em]MOM: Don't be late!

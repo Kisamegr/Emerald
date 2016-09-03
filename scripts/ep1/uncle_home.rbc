@@ -1,0 +1,255 @@
+#dynamic 0x9C4A54
+
+#org @start
+lockall
+showsprite 0x3
+movesprite 0x3 0x8 0x7
+movesprite 0x4 0x8 0x4
+
+pause 0x15
+
+applymovement 0x3 @moveuncle
+waitmovement 0x0
+
+pause 0x15
+
+msgbox @unc1 MSG_KEEPOPEN
+closeonkeypress
+msgbox @au1 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+applymovement 0x4 @moveau1
+applymovement 0xFF @movep1
+waitmovement 0x0
+
+spriteface 0x3 0x1
+
+pause 0x15
+
+msgbox @au2 MSG_KEEPOPEN
+closeonkeypress
+msgbox @wal1 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x10
+
+msgbox @au3 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+applymovement 0x4 @showau
+applymovement 0xFF @showwal
+applymovement 0x3 @showun
+waitmovement 0x0
+
+pause 0x15
+
+msgbox @au4 MSG_KEEPOPEN
+closeonkeypress
+
+spriteface 0x5 0x2
+showsprite 0x5
+applymovement 0x5 @movesis
+waitmovement 0x0
+applymovement 0xFF @moveright
+waitmovement 0x0
+
+pause 0x15
+
+msgbox @wan1 MSG_KEEPOPEN
+closeonkeypress
+
+applymovement 0x3 @uncexcla
+waitmovement 0x0
+
+msgbox @unc2 MSG_KEEPOPEN
+closeonkeypress
+msgbox @wan2 MSG_KEEPOPEN
+closeonkeypress
+msgbox @au5 MSG_KEEPOPEN
+closeonkeypress
+
+applymovement 0x4 @outau
+applymovement 0x5 @outwan
+applymovement 0x3 @outunc
+waitmovement 0x0
+
+setvar 0x4033 0x3
+releaseall 
+end
+
+
+#org @unc1
+= Uncle: Hey honey, I'm back\nwith WALLY.
+
+#org @au1
+= Aunt: Welcome back sweety.
+
+#org @au2
+= Aunt: Haven't seen you in a \nwhile WALLY.\pWelcome to our humble house!
+
+#org @wal1
+= [green_em]Thank you for letting me stay here\naunty!\p-cough- -cough-\pThe climate here will sure make me\nfeel better again!
+
+#org @au3
+= Aunt: Of course dear.\pYou will be healthier in no time!\pTrust my words.\pNow, let me show you your room.
+
+#org @au4
+= Aunt: This here is your room.\pI know it's a bit small, but I\nthink it will suit you just fine.
+
+#org @wal2
+= No, no, it is perfect, don't worry\nabout it.
+
+#org @wan1
+= [orange_em]Wanda: Something terrible has\nhappened.\pI need your help!
+
+#org @unc2
+= Uncle: What happened Wanda??
+
+#org @wan2
+= [orange_em]Wanda: No time to explain, come\nwith me real quick.
+
+#org @au5
+= Aunt: Oh my...\pWe must hurry then!
+
+#org @moveuncle
+#raw 0x09
+#raw 0x09
+#raw 0xFE
+
+#org @moveau1
+#raw 0x0A
+#raw 0x08
+#raw 0xFE
+
+#org @movep1
+#raw 0x09
+#raw 0xFE
+
+#org @showau
+#raw 0x09
+#raw 0x0B
+#raw 0x0B
+#raw 0x08
+#raw 0x0B
+#raw 0x0B
+#raw 0x08
+#raw 0x0B
+#raw 0x0B
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0x0B
+#raw 0x0
+#raw 0xFE
+
+#org @showwal
+#raw 0x14
+#raw 0x14
+#raw 0x14
+#raw 0x14
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0x09
+#raw 0x09
+#raw 0xFE
+
+#org @showun
+#raw 0x14
+#raw 0x14
+#raw 0x14
+#raw 0x14
+#raw 0x14
+#raw 0x14
+#raw 0x0B
+#raw 0x0B
+#raw 0x08
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0x03
+#raw 0xFE
+
+#org @movesis
+#raw 0x16
+#raw 0x18
+#raw 0x18
+#raw 0x18
+#raw 0x18
+#raw 0x18
+#raw 0x18
+#raw 0x16
+#raw 0xFE
+
+#org @moveright
+#raw 0x0B
+#raw 0x02
+#raw 0xFE
+
+#org @uncexcla
+#raw 0x56
+#raw 0x0
+#raw 0xFE
+
+#org @outwan
+#raw 0x15
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x15
+#raw 0x54
+#raw 0x15
+#raw 0xFE
+
+#org @outunc
+#raw 0x15
+#raw 0x15
+#raw 0x15
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x15
+#raw 0x54
+#raw 0x15
+#raw 0xFE
+
+#org @outau
+#raw 0x15
+#raw 0x15
+#raw 0x15
+#raw 0x15
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x15
+#raw 0x54
+#raw 0x15
+#raw 0xFE
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+#dynamic 0x700000
+
+#org @start
+setflag 0x1017
+release
+end

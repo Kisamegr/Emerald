@@ -1,0 +1,82 @@
+#dynamic 0x9C1EE8
+
+#org @start
+
+checkflag 0x1004
+if 0x1 goto @done
+
+pause 0x10
+
+applymovement 0x2 @faceup
+waitmovement 0x0
+pause 0x20
+
+msgbox @milk MSG_KEEPOPEN
+closeonkeypress
+pause 0x20
+
+applymovement 0xFF @movep
+waitmovement 0x0
+pause 0x20
+
+msgbox @eat MSG_KEEPOPEN
+closeonkeypress
+pause 0x2
+
+applymovement 0xFF @leave
+waitmovement 0x0
+pause 0x15
+
+msgbox @medi MSG_KEEPOPEN
+closeonkeypress
+pause 0x15
+
+applymovement 0xFF @return
+waitmovement 0x0
+pause 0x15
+
+msgbox @last MSG_KEEPOPEN
+closeonkeypress
+
+setflag 0x1004
+
+release
+end
+
+#org @done
+release
+end
+
+#org @milk
+= [red_em]MOM: Come, your tost is getting\ncold.\pMOM: And don't forget to get your\nmedicine.
+
+#org @eat
+= [green_em]-munch- -munch-
+
+#org @medi
+= [red_em]MOM: Where do you think you are\ngoing?\pMOM: You haven't drunk your\nmedicine yet.
+
+#org @last
+= [green_em]-gulp- -gulp-\pBliah\pThis medicine tastes terribly...
+
+
+#org @leave
+#raw 0x07
+#raw 0xFE
+
+#org @return
+#raw 0x06
+#raw 0xFE
+
+#org @faceup
+#raw 0x01
+#raw 0xFE
+
+#org @movep
+#raw 0x08
+#raw 0x0A
+#raw 0x08
+#raw 0x0A
+#raw 0x0A
+#raw 0xFE
+

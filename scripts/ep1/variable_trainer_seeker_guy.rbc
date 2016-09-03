@@ -1,0 +1,5 @@
+#dynamic 0x6B46BC
+
+#org @start
+setvar 0x40C9 0x1
+end

@@ -1,0 +1,32 @@
+#dynamic 0x6D1224
+
+
+#org @start
+checkflag 0x1014
+if 0x1 goto @nope
+lock
+checkflag 0x1015
+if 0x1 goto @trapnope
+msgbox @msg MSG_KEEPOPEN
+closeonkeypress
+goto @nope
+end
+
+
+
+#org @trapnope
+msgbox @msg2 MSG_KEEPOPEN
+closeonkeypress
+goto @nope
+end
+
+#org @nope
+setflag 0x1014
+release
+end
+
+#org @msg
+= [red_em]...\pHIHIHI!\pJUST A LIIIIITLE MOOOORE!
+
+#org @msg2
+= ...\pHIHIHI!\pYOU DIDN'T TRUUUUUST MEEEEEE?\pCLEEEEEEEVER BOOOOOOOOY!

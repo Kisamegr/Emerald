@@ -1,0 +1,24 @@
+#dynamic 0x6D1224
+
+
+#org @start
+checkflag 0x1015
+if 0x1 goto @nope
+checkflag 0x1017
+if 0x0 goto @nope
+lock
+msgbox @msg MSG_KEEPOPEN
+closeonkeypress
+pause 0x15
+special 0x13D
+pause 0x15
+setflag 0x1015
+release
+end
+
+#org @nope
+release
+end
+
+#org @msg
+= [red_em]...\pHIHIHI!\pTHAT DOOR IS A PAAAAAAAAAINTING\nON THE WAAAAAAAAALL!\pYOU FEEEEEEEELL FOR IT\nHAHAHAHAHAA!\pTHE REAL DOOR IS RIGHT\nTHEEEEEEEEEERE!

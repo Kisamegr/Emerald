@@ -1,0 +1,25 @@
+#dynamic 0x9A6740
+
+#org @start
+checkflag 0x1005
+if 0x1 goto @done
+
+msgbox @mum MSG_KEEPOPEN
+closeonkeypress
+msgbox @wal MSG_KEEPOPEN
+closeonkeypress
+
+setflag 0x1005
+setflag 0x1008
+release
+end
+
+#org @done
+release
+end
+
+#org @mum
+= [red_em]MOM: WALLY...\pMOM: Breakfast is ready, come eat.\pMOM: And have you packed your\nstuff yet?\pMOM: Remember your uncle is going\nto pick you up later.
+
+#org @wal
+= [green_em]WALLY: I'm... coming MOM.\pToday is the day I'll start my\nPokemon Adventure!\pI can't wait!\p-cough- -cough-\pI think I'll ask Mr. Norman later\nfor my Pokemon!\pHe must have plenty of them, he is\na Gym Leader after all!

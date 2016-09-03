@@ -1,0 +1,165 @@
+#dynamic 0x9C32CC
+
+#org @start
+lockall
+showsprite 0x3
+spriteface 0x1 0x1
+spriteface 0x2 0x3
+spriteface 0x3 0x1
+
+msgbox @un1 MSG_KEEPOPEN
+closeonkeypress
+msgbox @wal1 MSG_KEEPOPEN
+closeonkeypress
+msgbox @un2 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+spriteface 0x3 0x4
+pause 0x15
+
+msgbox @un3 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+applymovement 0xFF @movewalmom
+waitmovement 0x0
+
+
+pause 0x15
+
+msgbox @wal2 MSG_KEEPOPEN
+closeonkeypress
+msgbox @mom1 MSG_KEEPOPEN
+closeonkeypress
+msgbox @wal3 MSG_KEEPOPEN
+closeonkeypress
+msgbox @mom2 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+applymovement 0xFF @movewaldad
+waitmovement 0x0
+
+pause 0x15
+
+msgbox @wal4 MSG_KEEPOPEN
+closeonkeypress
+msgbox @dad MSG_KEEPOPEN
+closeonkeypress
+msgbox @wal5 MSG_KEEPOPEN
+closeonkeypress
+
+spriteface 0xFF 0x3
+
+pause 0x20
+
+msgbox @wal6 MSG_KEEPOPEN
+closeonkeypress
+msgbox @un4 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+setflag 0x1008
+setvar 0x4033 0x2
+
+applymovement 0x3 @outunc
+applymovement 0xFF @outwal
+waitmovement 0x0
+
+
+
+'eeee teleport
+
+warp 0x6 0x6 0x0 0x0 0x0
+
+releaseall 
+end
+
+
+#org @un1
+= Hey WALLY.\pHow are you doing?
+
+#org @wal1
+= [green_em]I'm better today Uncle!\pI just caught my first POKeMON!
+
+#org @un2
+= Care not to stress yourself\ntoo much.
+
+#org @un3
+= Alright, I think it's time to go.\pSay your goodbyes and we'll be on\nour way.
+
+#org @wal2
+= [green_em]Goodbye, Mom...
+
+#org @mom1
+= [red_em]Goodbye, Wally, I'll miss you...\p- smooch -
+
+#org @wal3
+= [green_em]Uh, Mom, I'm not a little boy\nanymore for kisses...
+
+#org @mom2
+= [red_em]You will always be my little boy.
+
+#org @wal4
+= [green_em]Goodbye to you too Dad.
+
+#org @dad
+= Goodbye son,\pBe sure to have a good time!
+
+#org @wal5
+= [green_em]Thanks Dad!
+
+#org @wal6
+= [green_em]Ready Uncle!
+
+#org @un4
+= Alright, let's go!
+
+
+
+#org @movewalmom
+#raw 0x09
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0xFE
+
+#org @movewaldad
+#raw 0x0A
+#raw 0x0A
+#raw 0x0A
+#raw 0x09
+#raw 0xFE
+
+
+#org @outunc
+#raw 0x08
+#raw 0x0B
+#raw 0x08
+#raw 0x54
+#raw 0xFE
+
+#org @outwal
+#raw 0x14
+#raw 0x14
+#raw 0x08
+#raw 0x08
+#raw 0xFE
+
+
+
+
+
+
+
+
+
+
+
+
+
+

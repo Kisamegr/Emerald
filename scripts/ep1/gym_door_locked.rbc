@@ -1,0 +1,11 @@
+#dynamic 0x6BA81C
+
+#org @start
+checkflag 0x1007
+if 0x0 goto @done
+setmaptile 0x0F 0x08 0x2A 0x1
+
+end
+
+#org @done
+end

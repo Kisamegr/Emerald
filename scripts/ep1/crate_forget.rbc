@@ -1,0 +1,10 @@
+#dynamic 0x6B46C4
+
+#org @start
+lock
+msgbox @msg MSG_NORMAL
+release
+end
+
+#org @msg
+= [green_em]I hope I didn't forget anything...

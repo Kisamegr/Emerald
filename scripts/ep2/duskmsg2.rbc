@@ -1,0 +1,19 @@
+#dynamic 0x6D1224
+
+
+#org @start
+checkflag 0x1013
+if 0x1 goto @nope
+lock
+msgbox @msg MSG_KEEPOPEN
+closeonkeypress
+setflag 0x1013
+release
+end
+
+#org @nope
+release
+end
+
+#org @msg
+= [red_em]...\pHIHIHI!\pYOU ARE CLOOOOSING\nON THE EEEEEEEXIT!

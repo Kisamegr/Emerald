@@ -1,0 +1,5 @@
+#dynamic 0x6CDE90
+
+#org @start
+giveitem 0x136 0x1 MSG_FIND
+end
