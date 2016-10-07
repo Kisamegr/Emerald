@@ -1,0 +1,22 @@
+#dynamic 0x6B0000
+
+#org @start
+lock
+checkflag 0x1019
+if 0x0 goto @openhole
+
+release
+end
+
+
+#org @openhole
+applymovement 0x1 @moveright
+sound 0xD
+waitmovement 0x0
+setflag 0x1019
+release
+end
+
+#org @moveright
+#raw 0x06
+#raw 0xFE

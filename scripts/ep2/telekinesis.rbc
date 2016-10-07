@@ -1,0 +1,93 @@
+#dynamic 0x6B0000
+
+#org @start
+lock
+checkflag 0x1020
+if 0x1 goto @nopes
+spriteface 0xFF 0x3
+pause 0x10
+
+checkattack 0x122
+compare LASTRESULT 0x6
+if 0x1 goto @attacknotfound
+goto @justdoit1
+end
+
+#org @justdoit1
+setanimation 0x0 LASTRESULT
+bufferpartypokemon 0x0 LASTRESULT
+bufferattack 0x1 0x122
+msgbox @msgdoit MSG_KEEPOPEN
+closeonkeypress 
+msgbox 0x8290771 MSG_KEEPOPEN '"[buffer1] used [buffer2]!"
+closeonkeypress
+doanimation 0x2
+waitstate
+pause 0x20
+goto @justdoit2
+end
+
+#org @justdoit2
+applymovement 0x1 @moveright
+sound 0xC
+waitmovement 0x0
+applymovement 0x1 @movedown
+sound 0xC
+waitmovement 0x0
+pause 0x20
+
+sound 0x2B                'falling down
+hidesprite 0x1
+setflag 0x1020
+clearflag 0x101E 
+pause 0x40
+sound 0x4D              'hit floor
+release
+end
+
+
+#org @attacknotfound
+checkflag 0x1022
+if 0x1 goto @attacknotfound2
+msgbox @msgnotfound MSG_KEEPOPEN
+closeonkeypress 
+setflag 0x1022
+goto @attacknotfound2
+end
+
+#org @attacknotfound2
+msgbox @msgnotfound2 MSG_KEEPOPEN
+closeonkeypress 
+applymovement 0xFF @movepup
+waitmovement 0x0
+release
+end
+
+#org @nopes
+release
+end
+
+#org @msgdoit
+= [green_em]Let's try this!\pRalts, use TELEKINESIS to\nmove the rock into the hole.
+
+#org @msgnotfound
+= [green_em]Oh... a rock!\pAnd a hole leading to\nthe previous floor!\pHow convenient!\pI could use the rock's body\nto press the plate downstairs!
+
+#org @msgnotfound2
+= [green_em]Now... if only I could push the\nrock into the hole somehow...\pMaybe Ralts can help me...
+
+#org @movepup
+#raw 0x09
+#raw 0xFE
+
+#org @moveright
+#raw 0x07
+#raw 0xFE
+
+#org @movedown
+#raw 0x04
+#raw 0xFE
+
+
+
+

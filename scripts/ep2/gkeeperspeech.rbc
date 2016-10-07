@@ -1,0 +1,83 @@
+#dynamic 0x000000
+
+#org @start
+applymovement 0x2 @excla
+waitmovement 0x0
+pause 0x10
+
+spriteface 0x2 0x1
+pause 0x20
+
+msgbox @msgkeeper1 MSG_NORMAL
+pause 0x20
+
+spriteface 0x3 0x1
+pause 0x20
+goto @verse2
+
+'----------------------------------
+#org @verse2
+
+           'epic ost
+
+msgbox @msghoenn1 MSG_NORMAL
+applymovement 0x2 @que
+pause 0x15
+spriteface 0x2 0x4
+pause 0x15
+
+msgbox @msgkeeper2 MSG_NORMAL
+
+pause 0x15
+applymovement 0x3 @omg
+waitmovement 0x0
+pause 0x15
+goto @verse2
+
+#org @verse2
+
+
+
+
+
+
+
+
+
+
+
+release
+end
+
+
+#org @msgkeeper1
+= [red_em]...\pHIHIHI!\pYOU FOUND ME AT LAAAAAST!\pWHAT TOOK YOU SO LOOOOOOONG!
+
+#org @msghoenn1
+= Hmm...\pIt seems you followed me here.\pAn Elite like me doesn's need a\ncommoner's help.\pThe fact that I am here long\nbefore you justifies it.
+
+#org @msgkeeper2
+= What are you saying\nmy dear Edward?\pWasn't you, who was crying like a\nlittle baby to get you out of\lthere?\pDid you hit your head while\nfalling down?
+
+
+
+#org @excla
+#raw 0x56
+#raw 0xFE
+
+#org @que
+#raw 0x57
+#raw 0xFE
+
+#org @omg
+#raw 0x02
+#raw 0x10
+#raw 0x0
+#raw 0x14
+#raw 0x02
+#raw 0x12
+#raw 0x10
+#raw 0x0
+#raw 0x10
+#raw 0x02
+#raw 0xFE

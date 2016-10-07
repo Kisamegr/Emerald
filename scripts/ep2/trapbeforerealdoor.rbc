@@ -1,0 +1,36 @@
+#dynamic 0x6D1224
+
+#org @start
+lock
+
+setmaptile 0x09 0x02 0x22f 0x0
+special 0x91
+sound 0x14                  'ground break - hole
+pause 0x20
+
+msgbox @msggatekeeper MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+sound 0x2B                'falling down
+applymovement 0xFF @hidewally
+waitmovement 0x0
+pause 0x40
+sound 0x4D              'hit floor
+
+pause 0x30
+
+setflag 0x1018
+warpmuted 0x0 0x3C 0x0 0x0 0x0
+
+release
+end
+
+#org @msggatekeeper
+= [red_em]...\pHIHIHI!\pYOU DIDN'T THINK IT WOULD BE THIS\nSIIIIIIIIIIIMPLE RIGHT?\pAHAHAHA AHAHAHA AHAHAHA
+
+#org @hidewally
+#raw 0x54
+#raw 0xFE
+
+

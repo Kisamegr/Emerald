@@ -1,0 +1,17 @@
+#dynamic 0x6B0000
+
+#org @start
+
+applymovement 0xFF @hidetrainer
+waitmovement 0x0 
+sound 0x2B                'falling down
+pause 0x40
+sound 0x4D              'hit floor
+pause 0x40
+warpmuted 0x0 0x3B 0x2 0x0B 0x02
+end
+
+
+#org @hidetrainer
+#raw 0x54
+#raw 0xFE

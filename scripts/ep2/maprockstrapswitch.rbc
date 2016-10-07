@@ -1,0 +1,22 @@
+#dynamic 0x6B0000
+
+#org @start
+checkflag 0x101A
+if 0x0 call @hidestuff
+checkflag 0x1020
+if 0x0 call @hidefallenrock
+end
+
+
+
+#org @hidestuff
+setflag 0x101B
+setflag 0x101C
+hidesprite 0x2
+hidesprite 0x3
+return
+
+#org @hidefallenrock
+setflag 0x101E
+hidesprite 0x4
+return

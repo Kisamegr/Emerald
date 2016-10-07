@@ -1,0 +1,54 @@
+#dynamic 0x6B0000
+
+#org @start
+checkflag 0x101A
+if 0x1 goto @attacknotfound
+checkattack 0x122
+compare LASTRESULT 0x6
+if 0x1 goto @attacknotfound
+
+setanimation 0x0 LASTRESULT
+bufferpartypokemon 0x0 LASTRESULT
+bufferattack 0x1 0x122
+msgbox 0x8290771 MSG_KEEPOPEN '"[buffer1] used [buffer2]!"
+closeonkeypress
+doanimation 0x2
+waitstate
+goto @moveit
+
+#org @moveit
+pause 0x20
+applymovement 0x4 @moverockright
+sound 0xC
+waitmovement 0x0
+applymovement 0x4 @moverockright
+sound 0xC
+waitmovement 0x0
+pause 0x10
+goto @openhole
+end
+
+#org @openhole
+applymovement 0x1 @movehole
+sound 0xD
+waitmovement 0x0
+clearflag 0x101B
+clearflag 0x101C
+setflag 0x101A
+setflag 0x101D
+setflag 0x0101E
+release
+end
+
+
+#org @attacknotfound
+release
+end
+
+#org @moverockright
+#raw 0x07
+#raw 0xFE
+
+#org @movehole
+#raw 0x06
+#raw 0xFE

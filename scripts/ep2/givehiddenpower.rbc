@@ -1,0 +1,9 @@
+#dynamic 0x6B0000
+
+#org @start
+lock
+giveitem 0x14B 01 MSG_FIND
+setflag 0x1021
+hidesprite 0x2
+release
+end

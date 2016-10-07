@@ -1,0 +1,11 @@
+#dynamic 0x6B0000
+
+#org @start
+checkflag 0x1018
+if 0x1 goto @showhole
+end
+
+#org @showhole
+setmaptile 0x09 0x02 0x22F 0x1
+special 0x91
+end
